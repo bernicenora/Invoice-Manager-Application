@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <title>Invoice Manager Application</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Invoice Manager</h1>
+                <input type="text" name="itemdate" class="date"><label class="date">Date: </label>
+            </div>
+            <div class="main">
+                <table style="width:100%;">
+                    <tr>
+                        <td><label>Item Code: </label></td>
+                        <td><input type="text" name="itemcode"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Item Name: </label></td>
+                        <td><input type="text" name="itemname"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Item Cost: </label></td>
+                        <td><input type="text" name="itemcost"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Item Quantity: </label></td>
+                        <td><input type="text" name="itemquantity"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2"><input type="submit" value="Add Item" id="addItem"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Current Invoice: </label></td>
+                        <td colspan="2">
+                            <textarea rows="10" cols="100" id="textArea"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Sub Total: </label></td>
+                        <td><input type="text" name="subtotal"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Sales Tax: </label></td>
+                        <td><input type="text" name="salestax"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Total Cost: </label></td>
+                        <td><input type="text" name="totalcost"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Print Invoice" id="printInvoice"></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>

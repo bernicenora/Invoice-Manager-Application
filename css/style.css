@@ -1,0 +1,24 @@
+*{
+    font-family:"Lato", "sans-serif";
+}
+
+.container{
+    background:lightgreen;
+    min-height:500px;
+    margin:0 auto;
+    padding:1em;
+    width:900px;
+}
+
+.date{
+float:right;
+}
+
+label{
+    float:right;
+}
+
+tr,td{
+    padding:5px;
+}
+

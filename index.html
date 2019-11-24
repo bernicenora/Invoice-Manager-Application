@@ -8,25 +8,25 @@
         <div class="container">
             <div class="header">
                 <h1>Invoice Manager</h1>
-                <input type="text" name="itemdate" class="date"><label class="date">Date: </label>
+                <input type="text" name="itemdate" id="date"><label class="date">Date: </label>
             </div>
             <div class="main">
                 <table style="width:100%;">
                     <tr>
                         <td><label>Item Code: </label></td>
-                        <td><input type="text" name="itemcode"></td>
+                        <td><input type="text" name="itemcode" id="itemCode"></td>
                     </tr>
                     <tr>
                         <td><label>Item Name: </label></td>
-                        <td><input type="text" name="itemname"></td>
+                        <td><input type="text" name="itemname" id="itemName"></td>
                     </tr>
                     <tr>
                         <td><label>Item Cost: </label></td>
-                        <td><input type="text" name="itemcost"></td>
+                        <td><input type="text" name="itemcost" id="itemCost"></td>
                     </tr>
                     <tr>
                         <td><label>Item Quantity: </label></td>
-                        <td><input type="text" name="itemquantity"></td>
+                        <td><input type="text" name="itemquantity" id="itemQty"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -35,7 +35,9 @@
                     <tr>
                         <td><label>Current Invoice: </label></td>
                         <td colspan="2">
-                            <textarea rows="10" cols="100" id="textArea"></textarea>
+                            <textarea rows="10" cols="100" id="textArea">
+
+                            </textarea>
                         </td>
                     </tr>
 

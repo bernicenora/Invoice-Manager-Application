@@ -6,44 +6,18 @@ var itemCost = document.getElementById("itemCost");
 var itemQty = document.getElementById("itemQty");
 var addItem = document.getElementById("addItem");
 var textArea = document.getElementById("textArea");
+var pad = "           ";
 
-//Adding a padding left and right of the strings
-/*var padLeft = function(text,width,pad){
-    if (arguments.length<2 || arguments.length>3){
-        return "";
-    }
-    if (arguments.length == 2){
-        pad="";
-    }
-    var result = text.toString();
-    while(result.length<width){
-        result = pad+result;
-    }
-    return result;
-}
-
-var padRight = function(text,width,pad){
-    if (arguments.length<2 || arguments.length>3){
-        return "";
-    }
-    if (arguments.length == 2){
-        pad="";
-    }
-    var result = text.toString();
-    while(result.length<width){
-        result = result+pad;
-    }
-    return result;
-}
-*/
 //Set Invoice Header
-var title = "Number" + "         "+ "Item Code"+"                              "+"Item Name"+"                                    "+"Item Cost" + "                    "+"Item Qty"+"          "+"Line Cost\n";
-title +="----------------------------------------------------------------------------------------------------------------------------------------------------"+"\n";
-textArea.value = title;
+
+var title = "No.".padEnd(10) + pad+ "Item Code".padEnd(10)+pad+"Item Name".padEnd(40)+pad+"Item Cost".padEnd(10) +pad+"Item Qty".padEnd(10)+pad+"Line Cost\n";
+title +="---------------------------------------------------------------------------------------------------------------------"+"\n";
+//textArea.value += invoiceArray;
 //Initialize the array and counter
-var invoiceArray = [];
+var invoiceArray = "";
 var i=0;
-//  textArea.value = invoiceArray;
+var subTotal = 0;
+textArea.value = title;
 var currentTime = new Date();
 var month = currentTime.getMonth() + 1;
 var day = currentTime.getDate();
@@ -51,23 +25,22 @@ var year = currentTime.getFullYear();
 console.log(month + "/" + day + "/" + year);
 date.value = month + "/" + day + "/" + year;
 
-
-
 addItem.onclick = function(){
 
-    /*list += padRight("Item Name",40) + "";
-    list += "Quantity ";
-    list += "Item Cost";
-    list += "Line Cost\n";*/
+    var line_cost = parseFloat(itemCost.value) * parseInt(itemQty.value);
 
-    /*list+=padRight("",10,"-") + " ";
-    list+=padRight("",40,"-") + " ";
-    list += "- ";
-    list += padRight("",9,"-")+ " ";
-    list += padRight("",9,"-")+ "\n";*/
+    invoiceArray = parseInt(i.toString().padEnd(5))+1+pad;
 
-    invoiceArray = i+1+"                   "+itemCode.value +"                                      "+itemName.value+"                                           "+itemCost.value+"                    "+itemQty.value+"\n";
-    //console.log(list);
+    invoiceArray += itemCode.value.padEnd(10)+pad;
+
+    invoiceArray += itemName.value.padEnd(40)+pad;
+
+    invoiceArray += itemCost.value.padEnd(10,' ')+pad;
+
+    invoiceArray += itemQty.value.padEnd(10,' ')+pad;
+
+    invoiceArray += line_cost.toString().padEnd(10,' ')+"\n";
+
     textArea.value += invoiceArray;
 
     itemCode.value="";
